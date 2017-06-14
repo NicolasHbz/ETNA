@@ -1,0 +1,29 @@
+/*
+** main.c for  in /home/nicolas/horbac_n/my_fill_tab
+** 
+** Made by HORBACZ Nicolas
+** Login   <horbac_n@etna-alternance.net>
+** 
+** Started on  Tue Mar 21 11:51:24 2017 HORBACZ Nicolas
+** Last update Tue Mar 21 14:23:54 2017 HORBACZ Nicolas
+*/
+#include <stdio.h>
+
+int    *my_fill_tab(void);
+  
+int	main()
+{
+  int *tableau;
+  int i;
+
+  i = 0;
+  
+  tableau = my_fill_tab();
+  while (i < 99)
+  {
+    printf("%d ", tableau[i]);
+    i = i + 1;
+  }  
+  return 0;
+}
+  

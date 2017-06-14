@@ -1,0 +1,82 @@
+/*
+** jump.c for  in /home/nicolas/horbac_n
+** 
+** Made by HORBACZ Nicolas
+** Login   <horbac_n@etna-alternance.net>
+** 
+** Started on  Thu Apr 13 10:34:33 2017 HORBACZ Nicolas
+** Last update Fri Apr 14 22:02:02 2017 HORBACZ Nicolas
+*/
+
+#include <time.h>
+#include <stdlib.h>
+#include "ftl.h"
+#include "function.h"
+
+void		jump(t_ship *ship, int *enemy_presence)
+{
+  t_enemy	*enemy;
+
+  enemy = NULL;
+  if (ship->ftl_drive->energy <= 0)
+    {
+      my_putstr("Vous n'avez plus d'energie\n");
+      orders(ship, enemy_presence, enemy);
+    }
+  if (ship->navigation_tools->sector <= 10)
+    {
+      jump_message(ship);
+      *enemy_presence = detect_enemy();
+      if (*enemy_presence == 1)
+	{
+	  enemy = create_enemy();
+	  my_putstr("*****************************************\n");
+	  my_putstr("* [DETECTOR] Un ennemi a ete detecte!!! *\n");
+	  my_putstr("*****************************************\n\n");
+	  battlefield(ship, enemy_presence, enemy);
+	}
+      else
+	orders(ship, enemy_presence, enemy);
+    }
+  else if (ship->navigation_tools->sector > 10)
+    {
+      my_putstr("FELICITATIONS! Vous avez survecu au secteur 10 !\n");
+      return;
+    }
+}
+
+int		detect_enemy()
+{
+  int	random;
+
+  srand(time(NULL));
+  random = (rand()% 100) + 1;
+  if (random <= 30)
+    return (1);
+  my_putstr("Aucun ennemi detecte\n\n");
+  return (0);
+}
+
+t_enemy		*create_enemy()
+{
+  t_enemy	*enemy;
+
+  enemy = malloc(sizeof(*enemy));
+  if (enemy == NULL)
+    my_putstr("L'ennemi s'est autodetruit\n");
+  enemy->damage = 10;
+  enemy->pv = 20;
+  return (enemy);
+}
+
+void		jump_message(t_ship *ship)
+{
+  ship->ftl_drive->energy = ship->ftl_drive->energy - 1;
+  ship->navigation_tools->sector = ship->navigation_tools->sector + 1;
+  my_putstr("Passage au secteur suivant....\n");
+  my_putstr("Vous passez dans le secteur: ");
+  my_put_nbr(ship->navigation_tools->sector);
+  my_putstr("      energie restante: ");
+  my_put_nbr(ship->ftl_drive->energy);
+  my_putstr("\n\n");
+}

@@ -1,0 +1,35 @@
+/*
+** main.c for  in /home/nicolas/horbac_n/my_list_size
+** 
+** Made by HORBACZ Nicolas
+** Login   <horbac_n@etna-alternance.net>
+** 
+** Started on  Wed Mar 29 15:58:46 2017 HORBACZ Nicolas
+** Last update Wed Mar 29 16:37:15 2017 HORBACZ Nicolas
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include "struct.h"
+
+int  my_list_size(t_list *begin);
+void my_putchar(char c);
+void  my_putstr(char *str);
+t_list  *my_params_in_list(int argc, char **argv);
+
+int main (int argc, char **argv)
+{
+  t_list        *list;
+  int		longueur;
+
+  list = my_params_in_list(argc, argv);
+  while (list != NULL)
+    {
+      my_putstr(list->data);
+      my_putchar('\n');
+      list = list->next;
+    }
+  longueur = my_list_size(my_params_in_list(argc, argv));
+  printf("%d" , longueur);
+  return(0);
+}

@@ -1,0 +1,42 @@
+#!/usr/bin/env php
+<?php
+// palindrome.php for  in /home/nicolas/horbac_n/palindrome
+// 
+// Made by HORBACZ Nicolas
+// Login   <horbac_n@etna-alternance.net>
+// 
+// Started on  Mon Apr  3 11:53:27 2017 HORBACZ Nicolas
+// Last update Mon Apr  3 21:39:17 2017 HORBACZ Nicolas
+//
+
+function palindrome($str)
+{
+  $space = 0;
+  $size = 0;
+  $tab = "";
+  $i = 0;
+  
+  while (isset($str[$space]))
+    {
+      if ($str[$space] != ' ')
+	$tab .= $str[$space];
+        $space = $space + 1;
+    }
+  while (isset($tab[$size]))
+    $size = $size + 1;
+    $rslt = true;
+  while (isset($tab[$i]) && ($rslt == true))
+    {
+      if ((ord($tab[$i]) == ord($tab[$size - $i - 1])) ||
+	  (ord($tab[$i]) == ord($tab[$size - $i - 1]) + 32) ||
+	  (ord($tab[$i]) == ord($tab[$size - $i - 1]) - 32))
+	$rslt = true;
+      else
+	$rslt = false;
+        $i = $i + 1;
+    }
+  if ($rslt == true)
+    return "True\n";
+  else
+    return "False\n";
+}

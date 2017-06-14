@@ -1,0 +1,1 @@
+grep -i -E 'samir rinaz|rinaz samir' passwd | wc -l

@@ -1,0 +1,25 @@
+#!/usr/bin/env php
+<?php
+// hello.php for  in /home/nicolas/horbac_n/hello
+// 
+// Made by HORBACZ Nicolas
+// Login   <horbac_n@etna-alternance.net>
+// 
+// Started on  Mon Apr  3 10:29:52 2017 HORBACZ Nicolas
+// Last update Mon Apr  3 11:09:09 2017 HORBACZ Nicolas
+//
+
+$param = "les assets ";
+
+function hello($param)
+{
+  if ($param)
+    {
+      echo "Hello "."{$param}";
+    }
+  else
+    {
+      echo "Hello world !";
+    }
+}
+hello();

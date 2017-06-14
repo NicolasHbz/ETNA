@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<form>
+		<p>
+			<label for="texte">Votre login :</label>
+			<input type="text" name="texte" id="texte" maxlength="5" placeholder="5 caracteres max">
+		<p>
+			<label for="mail">Votre email :</label>
+			<input type="EMAIL" name="mail" id="mail"/>
+		</p>
+		<p>
+			<label for="pass">Votre mot de passe :</label>
+       			<input type="password" name="pass" id="pass" />
+		</p>
+		<p>
+			<label for="date">Date d'anniversaire :</label>
+			<input type="date" name="date" id="date">
+		</p>
+		<p>
+			<label for="inscription">Inscription :</label>
+			<input type="text" name="inscription" placeholder="inscription" readonly >
+		</p>
+		<p>
+			<label for="inscription">Non disponible :</label>
+			<input type="text" name="Non disponible" placeholder="Non disponible" disabled>
+		</p>
+		<p>
+			Cochez les couleurs que vous aimez: <br />
+			<label for="Bleu">Bleu</label>
+			<input type="radio" name="couleur" value="Bleu" id="Bleu" checked>
+			<label for="Rouge">Rouge</label>
+			<input type="radio" name="couleur" value="Rouge" id="Rouge">
+		</p>
+		<p>
+			<label for="Vert">Vert</label>
+			<input type="checkbox" name="couleur2" value="Vert" id="Vert" checked>
+			<label for="Orange">Orange</label>
+			<input type="checkbox" name="couleur2" value="Orange" id="Orange">
+		</p>
+		<p>
+			<label for="region">Dans quelle region habitez vous ?</label><br />
+				<select name="region" id="region">
+					<option value="Ile de France">Ile de France</option>
+					<option value="PACA">PACA</option>
+					<option value="Ile de France">Hauts de France</option>
+				</select>
+		<p/>
+		<p>
+			<label for="commentaire">Souhaitez vous laisser un commentaire ?</label><br />
+				<textarea name="commentaire" id="commentaire" rows="20" cols="50"></textarea>
+		</p>
+		<p>
+			<input type="reset" value="Annuler" />
+			<input type="submit" value="Envoyer" />
+		</p>
+	</form>
+</body>
+</html>

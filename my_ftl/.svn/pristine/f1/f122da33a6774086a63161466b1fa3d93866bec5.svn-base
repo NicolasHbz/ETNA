@@ -1,0 +1,51 @@
+/*
+** create_ship.c for  in /home/nicolas/horbac_n
+** 
+** Made by HORBACZ Nicolas
+** Login   <horbac_n@etna-alternance.net>
+** 
+** Started on  Mon Apr 10 10:29:33 2017 HORBACZ Nicolas
+** Last update Mon Apr 10 13:42:03 2017 HORBACZ Nicolas
+*/
+
+#include <stdlib.h>
+#include "ftl.h"
+#include "function.h"
+
+t_ship		*create_ship ()
+{
+  t_ship	*create;
+  t_weapon	*weapon;
+
+  weapon = NULL;
+  my_putstr("construction du vaisseau en cours...\n");
+  create = malloc(sizeof(*create));
+  if (create == NULL)
+    {
+      my_putstr("le vaisseau n'a pas pu etre construit par manque de materiaux \n");
+    }
+  my_putstr("amelioration du vaisseau termine!\n");
+  return create;
+}
+
+int	add_weapon_to_ship(t_ship *ship)
+{
+  t_weapon	*weapon;
+
+  my_putstr("ajout des armes en cours...\n");
+  weapon = malloc(sizeof(*weapon));
+  if (weapon == NULL)
+    {
+      my_putstr("votre vaisseau a explose quand vous avez tente d'ajouter les armes\n");
+      return (0);
+    }
+  weapon->damage = 10;
+  weapon->system_state = my_strdup("online");
+  ship->weapon = weapon;
+  my_putstr("les armes on ete ajoutes avec succes!\n");
+  return (1);
+}
+  
+
+  
+  

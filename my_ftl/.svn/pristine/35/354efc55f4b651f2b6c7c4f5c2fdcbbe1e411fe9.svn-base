@@ -1,0 +1,122 @@
+/*
+** container.c for  in /home/nicolas/horbac_n
+** 
+** Made by HORBACZ Nicolas
+** Login   <horbac_n@etna-alternance.net>
+** 
+** Started on  Mon Apr 10 18:53:42 2017 HORBACZ Nicolas
+** Last update Sat Apr 15 09:47:52 2017 HORBACZ Nicolas
+*/
+
+#include <stdlib.h>
+#include "ftl.h"
+#include "function.h"
+
+int		add_container_to_ship(t_ship *ship)
+{
+  t_container	*container;
+
+  my_putstr("ajout du container en cours...\n");
+  container = malloc(sizeof(*container));
+  if (container == NULL)
+    {
+      my_putstr("votre vaisseau a explose lorsque ");
+      my_putstr("vous avez pose le container\n\n");
+      return (0);
+    }
+  container->first = NULL;
+  container->last = NULL;
+  container->nb_elem = 0;
+  ship->container = container;
+  my_putstr("le container a ete ajoute avec succes!\n\n");
+  return (1);
+}
+
+void		add_freight_to_container(t_ship *ship, t_freight *freight)
+{
+  if (ship->container->first == NULL)
+    {
+      ship->container->first = freight;
+      ship->container->last = freight;
+      ship->container->first->next = NULL;
+      ship->container->last->prev = NULL;
+    }
+  else
+    {
+      freight->next = NULL;
+      freight->prev = ship->container->last;
+      ship->container->last->next = freight;
+      ship->container->last = freight;
+    }
+  ship->container->nb_elem = ship->container->nb_elem + 1;
+}
+
+void		del_freight_from_container(t_ship *ship, t_freight *freight)
+{
+  if ((ship->container->first == NULL) && (ship->container->last == NULL))
+    {
+      my_putstr("Aucun element dans le container\n\n");
+      return;
+    }
+  else if ((freight == ship->container->first)
+	   && (freight == ship->container->last))
+    {
+      ship->container->first = NULL;
+      ship->container->last = NULL;
+    }
+  else if (freight == ship->container->first
+	   || freight == ship->container->last)
+    {
+      if (freight == ship->container->first)
+	{
+	  ship->container->first = freight->next;
+	  ship->container->first->next = freight->next->next;
+	  freight->next->prev = NULL;
+	}
+      else
+	{
+	  ship->container->last = freight->prev;
+	  ship->container->last->prev = freight->prev->prev;
+	  freight->prev->next = NULL;
+	}
+    }
+  else
+    {
+      freight->prev->next = freight->next;
+      freight->next->prev = freight->prev;
+    }
+  ship->container->nb_elem = ship->container->nb_elem - 1;
+  my_putstr("Un element a ete retire avec succes\n\n");
+  free(freight);
+}
+
+void		get_bonus(t_ship *ship)
+{
+  t_freight	*tmp;
+
+  tmp = ship->container->first;
+  while (tmp != NULL)
+    {
+      if (my_strcmp(tmp->item, "attackbonus") == 0)
+	{
+	  ship->weapon->damage = ship->weapon->damage + 5;
+	  my_putstr("5 points bonus de degats\n");
+	}
+      else if (my_strcmp(tmp->item, "evadebonus") == 0)
+	{
+	  ship->navigation_tools->evade = ship->navigation_tools->evade + 3;
+	  my_putstr("3 points bonus d'evasion\n");
+	}
+      else if (my_strcmp(tmp->item, "energy") == 0)
+	{
+	  ship->ftl_drive->energy = ship->ftl_drive->energy + 1;
+	  my_putstr("1 point bonus d'energie\n");
+	}
+      else
+	{
+	  return;
+	}
+      tmp = tmp->next;
+    }
+  free(tmp);
+}

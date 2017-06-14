@@ -1,0 +1,55 @@
+/*
+** choice_player.c for  in /home/nicolas/horbac_n/chifumi
+** 
+** Made by HORBACZ Nicolas
+** Login   <horbac_n@etna-alternance.net>
+** 
+** Started on  Fri Mar 31 21:30:33 2017 HORBACZ Nicolas
+** Last update Sat Apr  1 01:28:07 2017 HORBACZ Nicolas
+*/
+
+#include <time.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include "fonction.h"
+
+
+int	choice_player (int min, int max)   
+{
+  int	choice;
+
+  choice = 0;
+  my_putstr("Pierre (3), feuille (2), ciseaux (1) ?\n");
+  while ( choice < min || choice > max )
+    {
+      my_putstr("Veuillez saisir le chiffre correspondant a votre choix\n");
+      choice = my_getnbr(readLine()); 
+    }
+  my_putstr("\nVous avez choisi :");
+  if (choice == 1)
+    my_putstr(" Ciseaux \n");
+  if (choice == 2)
+    my_putstr(" Feuille \n");
+  if (choice == 3)
+    my_putstr(" Pierre \n");
+  return choice;
+}
+
+int	choice_cpu ()
+{
+  int	random;
+  
+  random = 0;
+  srand (time (NULL));
+  random = (rand()% 3) + 1;
+  my_putstr("L'ordinateur a choisi :");
+  if (random == 1)
+    my_putstr(" Ciseaux \n");
+  if (random == 2)
+    my_putstr(" Feuille \n");
+  if (random == 3)
+    my_putstr(" Pierre  \n");
+  return random;
+}
+  
+  

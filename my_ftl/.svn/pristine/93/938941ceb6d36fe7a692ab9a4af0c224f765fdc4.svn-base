@@ -1,0 +1,63 @@
+/*
+** ftl.h for  in /home/nicolas/horbac_n
+** 
+** Made by HORBACZ Nicolas
+** Login   <horbac_n@etna-alternance.net>
+** 
+** Started on  Mon Apr 10 09:20:31 2017 HORBACZ Nicolas
+** Last update Wed Apr 12 17:30:55 2017 HORBACZ Nicolas
+*/
+
+#ifndef __FTL_H__
+# define __FTL_H__
+
+typedef struct		s_weapon
+{
+  char			*system_state;
+  int			damage;
+
+}			t_weapon;
+
+typedef struct		s_ftl_drive
+{
+  char			*system_state;
+  int			energy;
+}			t_ftl_drive;
+
+typedef struct		s_navigation_tools
+{
+  char			*system_state;
+  int			sector;
+  int			evade;
+}			t_navigation_tools;
+
+typedef struct		s_freight
+{
+  char			*item;
+  struct s_freight     	*next;
+  struct s_freight     	*prev;
+}			t_freight;
+
+typedef struct		s_container
+{
+  t_freight		*first;
+  t_freight		*last;
+  int			nb_elem;
+}			t_container;
+
+typedef struct		s_ship
+{
+  int			hull;
+  t_weapon		*weapon;
+  t_ftl_drive		*ftl_drive;
+  t_navigation_tools	*navigation_tools;
+  t_container		*container;
+}			t_ship;
+
+typedef struct		s_repair_command
+{
+  char			*repair;
+  void			(*ptrfunc)(t_ship *ship);
+}			t_repair_command;
+
+#endif

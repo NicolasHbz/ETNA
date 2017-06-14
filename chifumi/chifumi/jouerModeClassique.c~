@@ -1,0 +1,13 @@
+/*
+** jouerModeClassique.c for  in /home/nicolas/horbac_n/chifumi
+** 
+** Made by HORBACZ Nicolas
+** Login   <horbac_n@etna-alternance.net>
+** 
+** Started on  Fri Mar 31 18:21:33 2017 HORBACZ Nicolas
+** Last update Fri Mar 31 18:24:07 2017 HORBACZ Nicolas
+*/
+
+void	jouerModeClassique(int duree)
+{
+  

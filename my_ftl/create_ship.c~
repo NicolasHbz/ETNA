@@ -1,0 +1,15 @@
+/*
+** create_ship.c for  in /home/nicolas/horbac_n
+** 
+** Made by HORBACZ Nicolas
+** Login   <horbac_n@etna-alternance.net>
+** 
+** Started on  Mon Apr 10 10:29:33 2017 HORBACZ Nicolas
+** Last update Mon Apr 10 10:34:44 2017 HORBACZ Nicolas
+*/
+
+#include "ftl.h"
+
+t_ship	*create_ship ()
+{
+  

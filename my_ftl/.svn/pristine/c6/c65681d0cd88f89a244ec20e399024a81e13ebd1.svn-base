@@ -1,0 +1,36 @@
+/*
+** ftl.h for  in /home/nicolas/horbac_n
+** 
+** Made by HORBACZ Nicolas
+** Login   <horbac_n@etna-alternance.net>
+** 
+** Started on  Mon Apr 10 09:20:31 2017 HORBACZ Nicolas
+** Last update Mon Apr 10 14:22:35 2017 HORBACZ Nicolas
+*/
+
+#ifndef __FTL_H__
+# define __FTL_H__
+
+typedef struct  s_weapon
+{
+  char  *system_state;
+  int   damage;
+
+}               t_weapon;
+
+
+typedef struct	s_ship
+{
+  int		hull;
+  t_weapon	*weapon;
+  t_ftl_drive	*ftl_drive;
+}		t_ship;
+
+typedef struct	s_ftl_drive
+{
+  char		*system_state;
+  int		energy;
+}		t_ftl_drive;
+
+#endif
+  

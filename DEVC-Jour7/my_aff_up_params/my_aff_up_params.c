@@ -1,0 +1,34 @@
+/*
+** my_aff_up_params.c for  in /home/nicolas/horbac_n/my_aff_up_params
+** 
+** Made by HORBACZ Nicolas
+** Login   <horbac_n@etna-alternance.net>
+** 
+** Started on  Mon Mar 27 09:23:37 2017 HORBACZ Nicolas
+** Last update Mon Mar 27 10:56:21 2017 HORBACZ Nicolas
+*/
+
+void	my_putchar(char c);
+
+void	my_aff_up_params(int argc, char **argv)
+{
+  int	i;
+  int	j;
+
+  i = 0;
+  while (i != argc)
+    {
+      j = 0;
+      while (argv[i][j] != '\0')
+	{
+	  if (argv[i][j] >= 'a'&& argv[i][j] <= 'z')
+	    {
+	      argv[i][j] = argv[i][j] - 32;
+	    }
+	  my_putchar(argv[i][j]);    
+	  ++j;
+	}
+      my_putchar('\n');
+      ++i;
+    }
+}

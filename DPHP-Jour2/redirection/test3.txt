@@ -1,0 +1,3 @@
+Usage : ./redirection.php 'string' '[> >>]' 'File'
+Usage : ./redirection.php 'string' '[> >>]' 'File'
+pipipipi

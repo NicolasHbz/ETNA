@@ -1,0 +1,27 @@
+/*
+** battlefield.c for  in /home/nicolas/horbac_n
+** 
+** Made by HORBACZ Nicolas
+** Login   <horbac_n@etna-alternance.net>
+** 
+** Started on  Thu Apr 13 17:07:39 2017 HORBACZ Nicolas
+** Last update Thu Apr 13 17:58:24 2017 HORBACZ Nicolas
+*/
+
+#include <stdlib.h>
+#include "ftl.h"
+#include "function.h"
+
+typedef enum	s_order_choice
+  {
+    ATTACK = 1,
+    JUMP,
+    DETECT,
+    GETBONUS
+  }		t_order_choice;
+
+int		battlefield(t_ship *ship, int enemy)
+{
+  my_putstr("caca");
+  return (0);
+}

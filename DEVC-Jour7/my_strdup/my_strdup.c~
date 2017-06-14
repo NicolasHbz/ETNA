@@ -1,0 +1,29 @@
+/*
+** my_strdup.c for  in /home/nicolas/horbac_n/my_strdup
+** 
+** Made by HORBACZ Nicolas
+** Login   <horbac_n@etna-alternance.net>
+** 
+** Started on  Mon Mar 27 11:29:36 2017 HORBACZ Nicolas
+** Last update Mon Mar 27 11:48:10 2017 HORBACZ Nicolas
+*/
+
+#include <stdlib.h>
+
+char	*my_strdup(char *str)
+{
+  int	i;
+  int	*dest;
+
+  dest = malloc(str * sizeof(int));
+
+  i = 0;
+  while (str[i] != '\0')
+    {
+      dest[i] = str[i];
+      ++i;
+    }
+  dest[i] = '\0';
+  free(dest);
+  return (dest);
+}

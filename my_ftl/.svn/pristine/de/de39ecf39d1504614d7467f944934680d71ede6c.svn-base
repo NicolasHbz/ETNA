@@ -1,0 +1,19 @@
+/*
+** jump.c for  in /home/nicolas/horbac_n
+** 
+** Made by HORBACZ Nicolas
+** Login   <horbac_n@etna-alternance.net>
+** 
+** Started on  Thu Apr 13 10:34:33 2017 HORBACZ Nicolas
+** Last update Thu Apr 13 10:59:43 2017 HORBACZ Nicolas
+*/
+
+#include <stdlib.h>
+#include "ftl.h"
+#include "function.h"
+
+void		jump(t_ship *ship)
+{
+  if (ship->navigation_tools->sector <= 10)
+      ship->navigation_tools->sector = ship->navigation_tools->sector + 1;
+}

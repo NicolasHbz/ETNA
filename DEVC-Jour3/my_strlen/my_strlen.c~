@@ -1,0 +1,12 @@
+/*
+** my_strlen.c for  in /home/nicolas/horbac_n/my_strlen
+** 
+** Made by HORBACZ Nicolas
+** Login   <horbac_n@etna-alternance.net>
+** 
+** Started on  Wed Mar 22 10:36:33 2017 HORBACZ Nicolas
+** Last update Wed Mar 22 10:37:53 2017 HORBACZ Nicolas
+*/
+
+int	my_strlen(char *str)
+{

@@ -1,0 +1,36 @@
+/*
+** main.c for  in /home/nicolas/horbac_n
+** 
+** Made by HORBACZ Nicolas
+** Login   <horbac_n@etna-alternance.net>
+** 
+** Started on  Mon Apr 10 10:54:51 2017 HORBACZ Nicolas
+** Last update Tue Apr 11 16:46:20 2017 HORBACZ Nicolas
+*/
+
+#include <stdio.h>
+#include "ftl.h"
+#include "function.h"
+#include <stdlib.h>
+
+int		main()
+{
+  t_ship	*ship;
+  t_freight	*freight;
+  int b;
+
+  ship = create_ship();
+  freight = malloc(sizeof(*freight));
+  if (freight == NULL)
+    my_putstr("pipi");
+  b = add_weapon_to_ship(ship);
+  b = add_ftl_drive_to_ship(ship);
+  b = add_navigation_tools_to_ship(ship);
+  b = add_container_to_ship(ship);
+  add_freight_to_container(ship, freight);
+  printf("%d\n", ship->container->nb_elem);
+  del_freight_from_container(ship, freight);
+  del_freight_from_container(ship, freight);
+  printf("%d\n", ship->container->nb_elem);
+  return (0);
+}

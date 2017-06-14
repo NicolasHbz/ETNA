@@ -1,0 +1,25 @@
+#!/usr/bin/env php
+<?php
+// hello.php for  in /home/nicolas/horbac_n/hello
+// 
+// Made by HORBACZ Nicolas
+// Login   <horbac_n@etna-alternance.net>
+// 
+// Started on  Mon Apr  3 10:29:52 2017 HORBACZ Nicolas
+// Last update Mon Apr  3 10:34:54 2017 HORBACZ Nicolas
+//
+
+$i = 0;
+
+while (i < argc)
+{
+  if (argc > 0)
+    {
+      echo "{argv[i]}\n";
+    }
+  else
+    {
+      echo "Hello World !\n";
+    }
+}
+   

@@ -1,0 +1,52 @@
+/*
+** container.c for  in /home/nicolas/horbac_n
+** 
+** Made by HORBACZ Nicolas
+** Login   <horbac_n@etna-alternance.net>
+** 
+** Started on  Mon Apr 10 18:53:42 2017 HORBACZ Nicolas
+** Last update Tue Apr 11 11:10:40 2017 HORBACZ Nicolas
+*/
+
+#include <stdlib.h>
+#include "ftl.h"
+#include "function.h"
+
+
+int		add_container_to_ship(t_ship *ship)
+{
+  t_container	*container;
+
+  my_putstr("ajout du container en cours...\n");
+  container = malloc(sizeof(*container));
+  if (container == NULL)
+    {
+      my_putstr("votre vaisseau a explose lorsque vous avez pose le container\n");
+      return (0);
+    }
+  container->first = NULL;
+  container->last = NULL;
+  container->nb_elem = 0;
+  ship->container = container;
+  my_putstr("le container a ete ajoute avec succes!\n");
+  return (1);
+}
+
+void		add_freight_to_container(t_ship *ship, t_freight *freight)
+{
+  if (freight->container->first == NULL)
+    {
+      ship->container->first = freight;
+      ship->container->last = freight;
+      ship->container->freight->next = NULL;
+      ship->container->freight->prev = NULL;
+    }
+  else
+    {
+      freight->next = NULL;
+      freight->prev = ship->container->last;
+      ship->container->last->next = freight;
+      ship->container->last = freight;
+    }
+  ship->container->nb_elem = ship->container->nb_elem + 1;
+}

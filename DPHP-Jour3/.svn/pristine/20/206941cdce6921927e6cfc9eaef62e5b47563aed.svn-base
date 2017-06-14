@@ -1,0 +1,61 @@
+#!/usr/bin/env php
+<?php
+// capitalize_file.php for  in /home/nicolas/horbac_n/capitalize_file
+// 
+// Made by HORBACZ Nicolas
+// Login   <horbac_n@etna-alternance.net>
+// 
+// Started on  Wed Apr  5 09:23:56 2017 HORBACZ Nicolas
+// Last update Wed Apr  5 18:15:31 2017 HORBACZ Nicolas
+//
+
+$i = 1;
+$j = 0;
+while ($i < $argc)
+  {
+    if (!(file_exists($argv[$i])))
+      {
+	echo "content.php: {$argv[$i]}: No such file or directory\n";
+      }
+    else if (is_dir($argv[$i]))
+      {
+	echo "content.php: {$argv[$i]}: Is a directory\n";
+      }
+    else if (!(is_readable($argv[$i])))
+      {
+	echo "content.php: {$argv[$i]}: Permission denied\n!";
+      }
+    else if ($open = fopen($argv[$i], "r"))
+      {
+	$read = file_get_contents($argv[$i]);
+	fclose($open);
+	$open = fopen($argv[$i], "w");
+	while (isset($read[$j]))
+	  {
+	    if ($read[0] >= "a" && $read[0] <= "z")
+	      {
+		$read[0] = chr(ord($read[0]) - 32);
+	      }
+	    if (($read[$j] == "!" || $read[$j] == "." || $read[$j] == "?") &&
+		($read[$j + 1] == "\n" || $read[$j + 1] == " " || $read[$j + 1] == chr(9)))
+	      {
+		while ($read[$j] < "a" || $read[$j] > "z")
+		  {   
+		    $j++; 
+		  }
+	        if ($read[$j] >= "a" && $read[$j] <= "z")
+		  {
+		    $read[$j] = chr(ord($read[$j]) - 32);
+		  }
+	      }
+	    $j++;
+	  }
+	fwrite($open, $read);
+	fclose($open);
+      }
+    else
+      {
+	echo "content.php: {$argv[$i]}: Cannot open file\n";
+      }
+    $i++;
+  }

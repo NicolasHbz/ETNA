@@ -1,0 +1,32 @@
+/*
+** main.c for  in /home/nicolas/horbac_n/my_params_to_tab
+** 
+** Made by HORBACZ Nicolas
+** Login   <horbac_n@etna-alternance.net>
+** 
+** Started on  Tue Mar 28 13:51:51 2017 HORBACZ Nicolas
+** Last update Tue Mar 28 17:28:15 2017 HORBACZ Nicolas
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include "structure.h"
+
+struct s_stock_par *my_params_to_tab(int ac, char **av);
+
+  
+int     main(int argc,char **argv)
+{
+  struct s_stock_par    *t;
+  int                   i;
+
+  i = 0;
+  t = my_params_to_tab(argc, argv);
+  while (i < argc)
+   {
+      printf("%s", t[i].copy);
+      i++;
+   }
+  printf("%s", t[i].copy);
+  return (0);
+}

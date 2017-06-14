@@ -1,0 +1,29 @@
+/*
+** jouerModeClassique.c for  in /home/nicolas/horbac_n/chifumi
+** 
+** Made by HORBACZ Nicolas
+** Login   <horbac_n@etna-alternance.net>
+** 
+** Started on  Fri Mar 31 18:21:33 2017 HORBACZ Nicolas
+** Last update Sat Apr  1 09:14:57 2017 HORBACZ Nicolas
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include "fonction.h"
+
+void	classic_mode(int duration)
+{
+  int	player_choice;
+  int	cpu_choice;
+  int	i;
+
+  i = 0;
+  while (i < duration)
+    {
+      player_choice = choice_player(1, 3);
+      cpu_choice = choice_cpu();
+      winner(player_choice, cpu_choice);
+      i++;
+    }
+}

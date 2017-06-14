@@ -1,0 +1,29 @@
+/*
+** my_put_revstr.c for  in /home/nicolas/horbac_n/my_put_revstr
+** 
+** Made by HORBACZ Nicolas
+** Login   <horbac_n@etna-alternance.net>
+** 
+** Started on  Wed Mar 22 13:27:16 2017 HORBACZ Nicolas
+** Last update Wed Mar 22 14:24:55 2017 HORBACZ Nicolas
+*/
+
+void	my_putchar(char c);
+
+void	my_put_revstr(char *str)
+{
+  int	i;
+
+  i = 0;
+  while (*str != '\0')
+    {
+      ++i;
+      ++str;
+    }
+  while (i >= 0)
+    {
+      my_putchar(*str);
+      --str;
+      --i;
+    }
+}

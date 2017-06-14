@@ -1,0 +1,31 @@
+/*
+** create_ship.c for  in /home/nicolas/horbac_n
+** 
+** Made by HORBACZ Nicolas
+** Login   <horbac_n@etna-alternance.net>
+** 
+** Started on  Mon Apr 10 10:29:33 2017 HORBACZ Nicolas
+** Last update Mon Apr 10 10:54:09 2017 HORBACZ Nicolas
+*/
+
+#include <stdlib.h>
+#include "ftl.h"
+#include "function.h"
+
+t_ship		*create_ship ()
+{
+  t_ship	*create;
+  
+  my_putstr("construction du vaisseau en cours...\n");
+  create = malloc(sizeof(*create));
+  if (create == NULL)
+    {
+      my_putstr("le vaisseau n'a pas pu etre construit par manque de materiaux \n");
+    }
+  my_putstr("amelioration du vaisseau termine!\n");
+  return create;
+}
+		  
+
+  
+  

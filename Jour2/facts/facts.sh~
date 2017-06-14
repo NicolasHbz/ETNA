@@ -1,0 +1,3 @@
+grep -E 'etna1|prof' passwd | sed 's/etna1/newbie/g' && sed 's/prof/gentil/g'
+
+

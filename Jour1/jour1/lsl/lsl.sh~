@@ -1,0 +1,22 @@
+mkdir test0
+touch test1
+echo qsd > test1
+mkdir test2
+touch test3
+echo > test3
+touch test4
+echo a > test4
+touch test5
+echo > test5
+touch testJour01
+echo sdfsfshshfshjvvjshshf > testJour01
+ln -s testJour01 test6
+touch -h -d "10/04/2012" test*
+
+chmod 715 test0
+chmod 504 test1
+chmod 414 test2
+chmod 404 test3
+chmod 020 test4
+chmod 404 test5
+chmod 615 testJour01

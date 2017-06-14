@@ -1,0 +1,61 @@
+/*
+** function.h for  in /home/nicolas/horbac_n
+** 
+** Made by HORBACZ Nicolas
+** Login   <horbac_n@etna-alternance.net>
+** 
+** Started on  Mon Apr 10 10:38:49 2017 HORBACZ Nicolas
+** Last update Fri Apr 14 20:17:27 2017 HORBACZ Nicolas
+*/
+
+#include "ftl.h"
+#ifndef __FUNCTION_H__
+# define __FUNCTION_H__
+
+void	my_putchar (char c);
+void	my_putstr(char *str);
+int	my_isneg (int n);
+void	my_put_nbr(int n);
+int	my_nbr_len(int n);
+int	my_strlen(char *str);
+int	my_strcmp(char *s1, char *s2);
+int	my_strncmp(char *s1, char *s2, int n);
+char	*my_strcat(char *dest, char *src);
+char	*my_strcpy(char *dest, char *src);
+char	*my_strncat(char *dest, char *src, int n);
+char	*my_strncpy(char *dest, char *src, int n);
+char	**my_str_to_wordtab(char *str);
+int	my_getnbr(char *str);
+char	*my_strstr( char *str, char *to_find);
+void	my_swap(int *a, int *b);
+char	 *readLine();
+t_ship	*create_ship();
+char    *my_strdup(const char *str);
+int     add_weapon_to_ship(t_ship *ship);
+int     add_ftl_drive_to_ship(t_ship *ship);
+int     add_navigation_tools_to_ship(t_ship *ship);
+int     add_container_to_ship(t_ship *ship);
+void    add_freight_to_container(t_ship *ship, t_freight *freight);
+void    del_freight_from_container(t_ship *ship, t_freight *freight);
+void    get_bonus(t_ship *ship);
+void	ftl_drive_system_check(t_ship *ship);
+void	navigation_tools_system_check(t_ship *ship);
+void    weapon_system_check(t_ship *ship);
+void    system_control(t_ship *ship);
+void    ftl_drive_system_repair(t_ship *ship);
+void	navigation_tools_system_repair(t_ship *ship);
+void    weapon_system_repair(t_ship *ship);
+void	system_repair(t_ship *ship);
+void    orders(t_ship *ship, int *enemy_presence, t_enemy *enemy);
+void    orders_without_enemy(t_ship *ship, int *enemy_presence);
+void    orders_with_enemy(t_ship *ship, t_enemy *enemy, int *enemy_presence);
+int     battlefield(t_ship *ship, int *enemy_presence, t_enemy *enemy);
+void	jump_message(t_ship *ship);
+void    jump(t_ship *ship, int *enemy_presence);
+void	draw_ship();
+void	start();
+int     detect_enemy();
+t_enemy *create_enemy();
+int     attack(t_ship *ship, int *enemy_presence, t_enemy *enemy);
+
+#endif

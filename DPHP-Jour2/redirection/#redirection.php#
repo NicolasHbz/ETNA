@@ -1,0 +1,18 @@
+#!/usr/bin/env php
+<?php
+// redirection.php for  in /home/nicolas/horbac_n/redirection
+// 
+// Made by HORBACZ Nicolas
+// Login   <horbac_n@etna-alternance.net>
+// 
+// Started on  Tue Apr  4 14:26:29 2017 HORBACZ Nicolas
+// Last update Tue Apr  4 15:12:52 2017 HORBACZ Nicolas
+//
+
+if (argv[2] != '>' || argv[2] != '>>')
+  {
+    echo "Usage : ./redirection.php 'string' '[> >>]' 'File'";
+  }
+else if (is_dir($argv[2]))
+  {
+    echo "co

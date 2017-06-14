@@ -1,0 +1,13 @@
+/*
+** my_detect_format.c for  in /home/nicolas/horbac_n/my_detect_format
+** 
+** Made by HORBACZ Nicolas
+** Login   <horbac_n@etna-alternance.net>
+** 
+** Started on  Wed Mar 22 22:58:17 2017 HORBACZ Nicolas
+** Last update Wed Mar 22 22:58:17 2017 HORBACZ Nicolas
+*/
+
+void	my_detect_format(char *str)
+{
+  

@@ -1,0 +1,13 @@
+#!/usr/bin/env php
+<?php
+// hello_world.php for  in /home/nicolas/horbac_n/hello_world
+// 
+// Made by HORBACZ Nicolas
+// Login   <horbac_n@etna-alternance.net>
+// 
+// Started on  Mon Apr  3 09:17:49 2017 HORBACZ Nicolas
+// Last update Mon Apr  3 10:00:10 2017 HORBACZ Nicolas
+//
+
+echo "Hello World!"."\n";
+?>

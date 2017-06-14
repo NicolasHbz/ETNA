@@ -1,0 +1,22 @@
+/*
+** my_strchr.c for  in /home/nicolas/horbac_n/my_strchr
+** 
+** Made by HORBACZ Nicolas
+** Login   <horbac_n@etna-alternance.net>
+** 
+** Started on  Wed Mar 22 11:08:54 2017 HORBACZ Nicolas
+** Last update Wed Mar 22 17:12:55 2017 HORBACZ Nicolas
+*/
+
+char	*my_strchr(char *str, int c)
+{
+  while (*str != '\0')
+    {
+      if (*str == c)
+	{
+	  return (str);
+	} 
+      ++str;
+    }
+  return (str);
+}

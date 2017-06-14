@@ -1,0 +1,18 @@
+/*
+** battlefield.c for  in /home/nicolas/horbac_n
+** 
+** Made by HORBACZ Nicolas
+** Login   <horbac_n@etna-alternance.net>
+** 
+** Started on  Thu Apr 13 17:07:39 2017 HORBACZ Nicolas
+** Last update Thu Apr 13 17:31:12 2017 HORBACZ Nicolas
+*/
+
+typedef enum	s_order_choice
+  {
+    ATTACK = 1,
+    JUMP,
+    DETECT,
+    GETBONUS
+  }		t_order_choice;
+

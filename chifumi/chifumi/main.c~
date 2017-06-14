@@ -1,0 +1,27 @@
+/*
+** main.c for  in /home/nicolas/horbac_n/chifumi
+** 
+** Made by HORBACZ Nicolas
+** Login   <horbac_n@etna-alternance.net>
+** 
+** Started on  Fri Mar 31 10:03:54 2017 HORBACZ Nicolas
+** Last update Fri Mar 31 19:13:51 2017 HORBACZ Nicolas
+*/
+
+#include "fonction.h"
+#include <stdlib.h>
+#include <stdio.h>
+
+int	main (int argc, char **argv)
+{
+  if (!error_manage(argc, argv))
+    {
+      my_putstr("\nMauvais arguments.");
+      my_putstr("\nMODELE: --version \"classique ou expert\"");
+      my_putstr(" --duree \"un nombre impair\"\n\n");
+      return (0);      
+    }
+  menu(argv);
+  return(0);
+}
+  

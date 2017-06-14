@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <p>
+            <h1>Titre 1</h1>
+            <h2>Titre 2</h2>
+            <h3>Titre 3</h3>
+            <h4>Titre 4</h4>
+            <h5>Titre 5</h5>
+            <h6>Titre 6</h6>
+        </p>
+        <hr/>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip 
+            ex ea commodo consequat. <br /> 
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+            Sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <p>Mes personnages favoris dans Star Wars</p>
+            <ul>
+                <li>Darth Vader</li>
+                <li>Boba Fett</li>
+                <li>Palpatine</li>
+                <li>Jabba</li>
+            </ul>
+        <p>
+            <h2>Citation</h2>
+        <blockquote><p>Q'est ce qu'j'vais faire de tout cet oseille !</p></blockquote>
+        <p>J'aime bien le
+            <abbr title="Hypertext Markup Language">HTML</abbr>
+        </p>
+        <p>
+            <code>
+                    echo "Bonjour";
+            </code>
+        </p>
+        <img src="https://lumiere-a.akamaihd.net/v1/images/Darth-Vader_6bda9114.jpeg?region=0%2C23%2C1400%2C785" 
+        alt="Darth Vader" />
+    </body>
+</html>

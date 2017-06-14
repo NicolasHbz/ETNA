@@ -1,0 +1,29 @@
+/*
+** main.c for  in /home/nicolas/horbac_n/my_params_in_list
+** 
+** Made by HORBACZ Nicolas
+** Login   <horbac_n@etna-alternance.net>
+** 
+** Started on  Wed Mar 29 13:57:53 2017 HORBACZ Nicolas
+** Last update Wed Mar 29 14:16:08 2017 HORBACZ Nicolas
+*/
+
+#include <stdio.h>
+
+int main (int argc, char **argv)
+{
+  t_list	list;
+  int		i;
+  
+  i = 0;
+  list = my_params_in_list(argc, argv);
+  while (list != NULL)
+    {
+      printf("%s", list->data);
+      list = list->next;
+    }
+  return(0);
+}
+      
+
+     

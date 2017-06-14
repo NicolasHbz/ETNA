@@ -1,0 +1,33 @@
+CC =    gcc
+NAME =  my_ftl.c
+SRC =   ftl.h \
+	function.h \
+        my_putchar.c \
+        my_putstr.c \
+        air_shed.c \
+        my_strcpy.c \
+        my_strncpy.c \
+        my_strlen.c \
+        my_strstr.c \
+        my_strcat.c \
+        my_strncat.c \
+        my_swap.c \
+        my_getnbr.c \
+        my_put_nbr.c \
+        my_strcmp.c \
+        my_strncmp.c \
+	my_strdup.c \
+	main.c
+OBJ =   $(SRC:%.c=%.o)
+RM =    rm -rf
+
+$(NAME):        $(OBJ)
+		$(CC) $(OBJ) -o $(NAME)
+all:    	$(NAME) clean
+
+.PHONY: 	all run clean test
+clean:
+		$(RM) *.o
+
+fclean:         clean
+		$(RM) $(NAME)

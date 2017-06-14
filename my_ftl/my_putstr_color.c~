@@ -1,0 +1,29 @@
+/*
+** my_putstr_color.c for  in /home/nicolas/horbac_n
+** 
+** Made by HORBACZ Nicolas
+** Login   <horbac_n@etna-alternance.net>
+** 
+** Started on  Wed Apr 12 10:51:18 2017 HORBACZ Nicolas
+** Last update Wed Apr 12 10:53:12 2017 HORBACZ Nicolas
+*/
+
+#include <stdlib.h>
+#include "function.h"
+
+void	my_putstr_color(const char *color, const char *str)
+{
+  int	i;
+
+  i = 0;
+  while (g_color[i].color != NULL && (my_strcmp(g_color[i].color, color) != 0))
+    i++;
+  if (g_color[i].color == NULL)
+    {
+      my_putstr(str);
+      return ;
+    }
+  my_putstr(g_color[i].unicode);
+  my_putstr(str);
+  my_putstr(reset_color);
+}

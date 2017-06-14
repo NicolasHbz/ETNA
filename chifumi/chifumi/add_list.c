@@ -1,0 +1,29 @@
+/*
+** add_list.c for  in /home/nicolas/horbac_n/chifumi
+** 
+** Made by HORBACZ Nicolas
+** Login   <horbac_n@etna-alternance.net>
+** 
+** Started on  Fri Mar 31 19:29:29 2017 HORBACZ Nicolas
+** Last update Fri Mar 31 20:49:00 2017 HORBACZ Nicolas
+*/
+
+#include "fonction.h"
+#include <stdlib.h>
+#include <stdio.h>
+
+t_list		*add_list (t_list *list, int rnd, int scor_p, int scor_cpu, int choi_p, int choi_cpu)
+{
+  t_list	*node;
+
+  node = malloc(sizeof(t_list));
+  if (node == NULL)
+    return(NULL);
+  node->next = list;
+  node->rnd = rnd;
+  node->scor_p = scor_p;
+  node->scor_cpu = scor_cpu;
+  node->choi_p = choi_p;
+  node->choi_cpu = choi_cpu;
+  return (node);
+}

@@ -1,0 +1,1 @@
+groups $MY_USER | tr ' ' ',' 

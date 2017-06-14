@@ -1,0 +1,1 @@
+cat passwd | awk -F ":" '!($3%42){print$1}' > result.txt

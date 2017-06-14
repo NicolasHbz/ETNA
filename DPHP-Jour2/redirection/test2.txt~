@@ -1,0 +1,1 @@
+Usage : ./redirection.php 'string' '[> >>]' 'File'

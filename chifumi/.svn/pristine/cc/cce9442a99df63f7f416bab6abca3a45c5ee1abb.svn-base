@@ -1,0 +1,48 @@
+/*
+** menu.c for  in /home/nicolas/horbac_n/chifumi
+** 
+** Made by HORBACZ Nicolas
+** Login   <horbac_n@etna-alternance.net>
+** 
+** Started on  Fri Mar 31 10:31:04 2017 HORBACZ Nicolas
+** Last update Fri Mar 31 21:18:16 2017 HORBACZ Nicolas
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include "fonction.h"
+
+void	menu(char **argv)
+{
+  int   version;
+  int	duration;
+
+  if (my_strcmp(argv[2], "classique") == 0)
+    version = 1;
+  if (my_strcmp(argv[2], "expert") == 0)
+    version = 0;
+  duration = *argv[4] - 48;
+  if (version)
+    {
+      my_putstr("----------------------------------------------------\n");
+      my_putstr("\nVous avez choisi les parametres suivants:\n\n");
+      my_putstr("VERSION: PIERRE - PAPIER - CISEAUX\n");
+      my_putstr("BEST OF: ");
+      my_put_nbr(duration);
+      my_putstr("\n\n");
+      my_putstr("----------------------------------------------------\n");
+      classic_mode(duration);
+    }
+  else
+    {
+      my_putstr("----------------------------------------------------\n");
+      my_putstr("\nVous avez choisi les parametres suivants:\n\n");
+      my_putstr("VERSION: PIERRE - PAPIER - CISEAUX - LEZARD - SPOCK\n");
+      my_putstr("BEST OF: ");
+      my_put_nbr(duration);
+      my_putstr("\n\n");
+      my_putstr("----------------------------------------------------\n");
+    }
+}
+
+  

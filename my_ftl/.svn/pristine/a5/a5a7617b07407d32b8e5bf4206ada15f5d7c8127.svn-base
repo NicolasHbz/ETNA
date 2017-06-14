@@ -1,0 +1,53 @@
+/*
+** game.c for  in /home/nicolas/horbac_n
+** 
+** Made by HORBACZ Nicolas
+** Login   <horbac_n@etna-alternance.net>
+** 
+** Started on  Thu Apr 13 09:53:22 2017 HORBACZ Nicolas
+** Last update Thu Apr 13 13:33:02 2017 HORBACZ Nicolas
+*/
+
+#include <stdlib.h>
+#include "ftl.h"
+#include "function.h"
+
+static const t_orders_command   orders_command[] =
+  {
+    {"jump", jump},
+    {NULL, NULL}
+  };
+
+int				game(t_ship *ship)
+{
+  char                          *read;
+  int                           i;
+
+  i = 0;
+  my_putstr("waiting_for_orders>");
+  read = readLine();
+  if (read == NULL)
+    {
+      my_putstr("[SYSTEM FAILURE] : le lecteur de commande est bloque");
+      return 0;
+    }
+  my_putchar('\n');
+  while (orders_command[i].orders != NULL)
+    {
+      if (my_strcmp(read, orders_command[i].orders) == 0)
+	{
+	  orders_command[i].func(ship);
+	  break;
+	}
+      i++;
+    }
+  if (orders_command[i].orders == NULL)
+    my_putstr("[SYSTEM FAILURE] : commande inconnue\n");
+  return (1);
+}
+
+void		jump(t_ship *ship)
+{
+  if (ship->navigation_tools->sector <= 10)
+    ship->navigation_tools->sector = ship->navigation_tools->sector + 1;
+}
