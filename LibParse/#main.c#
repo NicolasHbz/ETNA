@@ -1,0 +1,20 @@
+/*
+** main.c for  in /home/nicolas/Documents/etna/LibList
+** 
+** Made by HORBACZ Nicolas
+** Login   <horbac_n@etna-alternance.net>
+** 
+** Started on  Tue Jun 20 16:58:53 2017 HORBACZ Nicolas
+** Last update Tue Jun 27 23:38:02 2017 HORBACZ Nicolas
+*/
+
+#include "liblist.h"
+#include <stdlib.h>
+#include <stdio.h>
+
+\n');
+	}
+    }
+  free(results);
+  return 0;
+}
